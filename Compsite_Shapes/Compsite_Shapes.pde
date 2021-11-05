@@ -1,8 +1,11 @@
 //Measles
 //
 float rectX, rectY, rectWidth, rectHeight;
-float circleX, circleY, circleDiameter;
-float x1, y1, x2, y2, x3, y3;
+float faceX, faceY, faceeDiameter, faceDiameter;
+float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
+float leftEyeX, LeftEyeY, eyeDiameter, eyeDiameter;
+float rightEyeX, rightEyeY, eyeDiameter, eyeDiameter;
+float mouth
 //Geometry
 fullScreen();
 //
@@ -11,17 +14,20 @@ rectX = displayWidth*1/2 - displayHeight*1/2;
 rectY = displayHeight*0;
 rectWidth =displayHeight;
 rectHeight = displayHeight;
-circleX = displayWidth*1/2;
-circleY = displayHeight*1/2; //184;
-circleDiameter= height;
-x1 = displayWidth*1/2;
-y1 = displayHeight*1/2;
-x2 = displayWidth;
-y2 = displayHeight;
-x3 = displayWidth*-1/2;
-y3 = displayHeight*-1/2;
+faceX = displayWidth*1/2;
+faceY = displayHeight*1/2; //184;
+faceDiameter= height;
+noseX1 = displayWidth*1/2;
+noseY1 = displayHeight*3/8;
+noseX2 = displayWidth*3/8;
+noseY2 = displayHeight*1/2;
+noseX3 = displayWidth*5/8;
+noseY3 = displayHeight*1/2;
 //
 //Canvas
 rect(rectX, rectY, rectWidth, rectHeight);
-ellipse(circleX, circleY, circleDiameter, circleDiameter);
-triangle(x1, y1, x2, y2, x3, y3);
+ellipse(faceX, faceY, faceeDiameter, faceDiameter);
+ellipse(leftEyeX, LeftEyeY, eyeDiameter, eyeDiameter);
+ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
+triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
+line(mouthX1, mouthY1, mouthX2, mouthY2);
