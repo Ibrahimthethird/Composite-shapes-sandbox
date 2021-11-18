@@ -39,11 +39,12 @@ void setup() {
   mouthY2 = displayHeight*3/4;
   mouthThick = 13;
   reset = 1;
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
 }//End setup()
 //
 void draw() {
   //Canvas
-  ellipse(faceX, faceY, faceDiameter, faceDiameter);
+  triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
   ellipse(leftEyeX, LeftEyeY, eyeDiameter, eyeDiameter);
   ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
