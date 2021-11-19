@@ -9,7 +9,11 @@ float rightEyeX, rightEyeY;
 float mouthX1, mouthY1, mouthX2, mouthY2;
 float reset, mouthThick; 
 float measleX, measleY, measleDiameter; 
+float measleX1, measleY1, measleDiameter1; 
 color measleColour=#ED1111, resetColour=#FFFFFF;
+float buttonX, buttonY, buttonWidth, buttonHeight;
+color  buttonColor, yellow=#FFF700, purple=#E334F7, white=#FFFFFF, resetColor=white, red=#FF0009;
+
 // 
 void setup() {
   //Geometry
@@ -19,6 +23,10 @@ void setup() {
   rectY = displayHeight*0;
   rectWidth =displayHeight;
   rectHeight = displayHeight;
+  buttonX = displayWidth*124/128;
+  buttonY = displayHeight*0/128;
+  buttonWidth = displayWidth*128/128;
+  buttonHeight = displayHeight*4/128;
   faceX = displayWidth*1/2;
   faceY = displayHeight*1/2; //184;
   faceDiameter= displayHeight;
@@ -53,10 +61,28 @@ void draw() {
   strokeWeight(reset);
   fill(measleColour);
   ellipse(measleX, measleY, measleDiameter, measleDiameter);
+  ellipse(measleX1, measleY1, measleDiameter1, measleDiameter1);
   fill(resetColour);
   //Population that changes
-  measleX = random(displayWidth*2/8, displayWidth*6/8);
-  measleY = random(displayHeight);
-  measleDiameter =random(displayWidth*1/30, displayWidth*1/10);
+  measleX = random(displayWidth*5/16, displayWidth*11/16);
+  measleY = random(displayHeight*2/16, displayHeight*7/8);
+  measleDiameter = displayWidth*1/60;
+  measleX1 = random(displayWidth*2/8, displayWidth*6/8);
+  measleY1 = random(displayHeight*6/16, displayHeight*6/8);
+  measleDiameter1 = displayWidth*1/60;
+  //
+  println(mouseX, mouseY);
+  if (mouseX >= buttonX && mouseY >= buttonY && mouseX <= buttonX+buttonWidth &&  mouseY <= buttonY+buttonHeight) {
+    buttonColor = red; //color(random(255), random(255), random(255));
+  } else {
+    buttonColor = white;
+  }//End IF Button Colour
+  fill(buttonColor);
+  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+  fill(resetColor);
   //
 }//End draw()
+//
+void mousePressed() {
+  if (mouseX >= buttonX && mouseY >= buttonY && mouseX <= buttonX+buttonWidth &&  mouseY <= buttonY+buttonHeight) exit();
+}//End mousePressed()
