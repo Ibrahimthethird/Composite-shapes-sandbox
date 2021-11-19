@@ -12,8 +12,7 @@ float measleX, measleY, measleDiameter;
 float measleX1, measleY1, measleDiameter1; 
 color measleColour=#ED1111, resetColour=#FFFFFF;
 float buttonX, buttonY, buttonWidth, buttonHeight;
-color  buttonColor, yellow=#FFF700, purple=#E334F7, white=#FFFFFF, resetColor=white, red=#FF0009;
-
+color  buttonColor, yellow=#FFF700, purple=#E334F7, white=#FFFFFF, resetColor=white, red=#FF0009, skin=#E0AC69, bleuEyes=#2832C2, redEyes=#B80F0A;
 // 
 void setup() {
   //Geometry
@@ -47,13 +46,16 @@ void setup() {
   mouthY2 = displayHeight*3/4;
   mouthThick = 13;
   reset = 1;
+  fill(skin);
   ellipse(faceX, faceY, faceDiameter, faceDiameter);
 }//End setup()
 //
 void draw() {
   //Canvas
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
+  fill(redEyes);
   ellipse(leftEyeX, LeftEyeY, eyeDiameter, eyeDiameter);
+  fill(bleuEyes);
   ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
   strokeWeight(mouthThick);
